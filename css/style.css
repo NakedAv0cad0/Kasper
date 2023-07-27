@@ -28,7 +28,6 @@ a {
     position: relative;
 }
 /* End pre-design */
-
 /* Start header */
 .header #logo {
     height: 40px;
@@ -82,10 +81,14 @@ a {
     color: var(--main-color);
     border-bottom: 1px solid var(--main-color);
 }
-
-
 /* End header */
-.overlay {
+/* Start Landing */
+.landing {
+    height: calc(100vh - 97.09px);
+    display: flex;
+    align-items: center;
+}
+.landing .overlay {
     background-image: url('/images/landing.jpg');
     height: 100vh;
     width: 100%;
@@ -94,6 +97,80 @@ a {
     filter: brightness(0.4);
     z-index: -2;
 }
+.landing .text {
+    color: var(--text-white);
+    background-color: var(--transparent-color);
+    width: 50%;
+    padding: 50px;
+    transform: translate(0, -10%);
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+}
+.landing .text .intro {
+    width: 487px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+.landing .text p{
+    font-size: 14px;
+    line-height: 2;
+}
+.landing .text h1{
+    font-weight: 400;
+    margin-top: 0;
+}
+.landing::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    border-bottom: 6px solid var(--text-white) ;
+    border-left: 6px solid var(--text-white);
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    left: 30px;
+    top: calc(50% - 10px);
+    z-index: 3;
+}
+.landing::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    transform: rotate(225deg);
+    border-bottom: 6px solid var(--text-white) ;
+    border-left: 6px solid var(--text-white);
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    right: 30px;
+    top: calc(50% - 10px);
+    z-index: 3;
+}
+.landing .tab {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 45px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+.landing .tab .radio {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--text-white);
+    border-radius: 50%;
+}
+.landing .tab .checked {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+/* End Landing */
 /* Start media query */
 /* Smaller */
 @media (max-width: 576px) {
