@@ -375,6 +375,9 @@ a {
     :root {
         --section-padding: 60px;
     }
+    .intro h1 {
+        text-align: center;
+    }
     /* Header */
     .header .container .header-content .links ul{
         position: absolute;
@@ -436,6 +439,14 @@ a {
     }
     .landing::before, .landing::after {
         display: none;
+    }
+    .landing .greeting {
+        justify-content: center;
+    }
+    .landing .greeting .intro p {
+        font-size: 16px;
+        text-align: center;
+        width: 400px;
     }
     .services .service {
         grid-template-columns: minmax(300px, 600px);
@@ -536,6 +547,9 @@ a {
     }
     .landing::before, .landing::after {
         display: none;
+    }
+    .landing .greeting {
+        justify-content: center;
     }
     .grid {
         grid-template-columns: minmax(300px, 600px);
