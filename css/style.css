@@ -483,6 +483,7 @@ a {
     height: 30px;
     border: 1px solid var(--text-black);
     position: relative;
+    background-color: #eee;
 }
 .about .skills .skill:not(:first-of-type) {
     margin-top: 50px;
@@ -613,8 +614,8 @@ a {
 }
 .about .quote {
     position: relative;
-    height: 30vh;
-    margin-top: 370px;
+    height: 32vh;
+    margin-top: var(--section-padding);
     overflow: visible;
     width: 100%;
 }
@@ -623,6 +624,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    filter: brightness(0.2);
 }
 .about .quote .intro {
     width: 60%;
@@ -642,6 +644,95 @@ a {
     color: var(--text-white);
 }
 /* End About */
+/* Start Pracing */
+.pracing {
+    padding-bottom: var(--section-padding);
+}
+.pracing .price {
+    grid-template-columns: repeat(auto-fit, 250px);
+    gap: 40px;
+}
+.pracing .price .mony, .pracing .price .text, .pracing .price .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcfcfc;
+}
+.pracing .price .mony {
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    padding: 40px 0;
+}
+.pracing .price .mony h2 {
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+.pracing .price .mony span {
+    font-size: 60px;
+    font-weight: 700;
+    position: relative;
+}
+.pracing .price .mony span::before {
+    content: "$";
+    position: absolute;
+    top: 0;
+    left: -20%;
+    font-size: 20px;
+    font-weight: 600;
+}
+.pracing .price .mony span::after {
+    content: "/mo";
+    position: absolute;
+    bottom: 0;
+    right: -50%;
+    font-size: 20px;
+    font-weight: 600;
+}
+.pracing .price .text {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--main-color);
+}
+.pracing .price .text p {
+    padding: 20px;
+}
+.pracing .price .text p:not(:last-of-type) {
+    border-bottom: 1px solid var(--main-color);
+}
+.pracing .price .button {
+    padding: 40px 0;
+}
+.pracing .price .button button {
+    padding: 20px;
+    background-color: var(--text-white);
+    color: var(--text-black);
+    border: 1px solid var(--main-color);
+    cursor: pointer;
+    transition: var(--delay);
+}
+.pracing .price .button button:hover {
+    background-color: var(--main-color);
+    color: var(--text-white);
+}
+.pracing .container > p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.pracing .contact-us {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px 25px;
+    background-color: var(--main-color);
+    color: var(--text-white);
+    border: none;
+
+}
+/* .price > button {
+    text-align: center;
+} */
+/* End Pracing */
 /* Start media query */
 /* Smaller */
 @media (max-width: 576px) {
@@ -784,6 +875,13 @@ a {
         width: 100%;
         font-size: 32px;
     }
+    .disc {
+        width: 90%;
+    }
+    .pracing .price {
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        gap: 40px;
+    }
 }
 /* Small */
 @media (max-width: 786px) and (min-width: 576px) {
@@ -895,6 +993,13 @@ a {
         width: 80%;
         font-size: 32px;
     }
+    .disc {
+        width: 80%;
+    }
+    .pracing .price {
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        gap: 40px;
+    }
 }
 /* Medium */
 @media (max-width: 992px) and (min-width: 786px) {
@@ -937,6 +1042,13 @@ a {
         grid-template-columns: repeat(2, 300px);
         padding: 20px;
         column-gap: 125px;
+    }
+    .disc {
+        width: 70%;
+    }
+    .pracing .price {
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        gap: 40px;
     }
 }
 /* Large */
