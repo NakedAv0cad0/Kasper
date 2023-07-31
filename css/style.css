@@ -8,12 +8,16 @@
     --text-black: black;
 }
 /* End Variables */
-/* Start pre-design */
+/* Start Global Rules */
 * {
-    font-family: "open sans", sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+body {    
+    font-family: "open sans", sans-serif;
 }
 ul {
     list-style-type: none;
@@ -24,10 +28,10 @@ a {
 }
 .container {
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
     position: relative;
 }
-/* End pre-design */
+/* End Global Rules */
 /* Start Frame work */
 .side {
     color: var(--text-white);
@@ -729,7 +733,6 @@ a {
     background-color: var(--main-color);
     color: var(--text-white);
     border: none;
-
 }
 .pracing .mail {
     position: relative;
@@ -899,11 +902,20 @@ a {
 /* Start media query */
 /* Smaller */
 @media (max-width: 575px) {
+    /* Global Rules */
     :root {
         --section-padding: 60px;
     }
     .intro h1 {
         text-align: center;
+    }
+    .side {
+        width: 100%;
+        justify-content: center;
+        z-index: -1;
+    }
+    .disc {
+        width: 90%;
     }
     /* Header */
     .header .container .header-content .links ul{
@@ -959,11 +971,7 @@ a {
         left: 10px;
         transition: var(--delay);
     }
-    .side {
-        width: 100%;
-        justify-content: center;
-        z-index: -1;
-    }
+    /* Landing */
     .landing::before, .landing::after {
         display: none;
     }
@@ -975,6 +983,7 @@ a {
         text-align: center;
         width: 400px;
     }
+    /* Services */
     .services .service {
         grid-template-columns: minmax(300px, 600px);
     }
@@ -993,12 +1002,14 @@ a {
     .services .disc {
         width: 80%;
     }
+    /* Features */
     .features > img{
         display: none;
     }
     .features .featur {
         transform: translate(0, 15%);
     }
+    /* Portfolio */
     .portfolio .art {
         grid-template-columns: minmax(270px, 1fr);
         grid-template-rows: minmax(150px, 1fr);
@@ -1012,6 +1023,7 @@ a {
         transform: translate(0, 50%);
         padding: 20px 20px 10px;
     }
+    /* About */
     .about .states > img {
         display: none;
     }
@@ -1044,9 +1056,7 @@ a {
         width: 100%;
         font-size: 32px;
     }
-    .disc {
-        width: 90%;
-    }
+    /* Pracing */
     .pracing .price {
         grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
         gap: 40px;
@@ -1073,6 +1083,7 @@ a {
         height: 40px;
         width: 300px;
     }
+    /* Contact */
     .contact .data {
         grid-template-columns: 90%;
         padding: 0 10px;
@@ -1086,6 +1097,18 @@ a {
 }
 /* Small */
 @media (max-width: 786px) and (min-width: 576px) {
+    /* Golobal Rules */
+    .side {
+        width: 100%;
+        justify-content: center;
+        z-index: -1;
+    }
+    .grid {
+        grid-template-columns: minmax(300px, 600px);
+    }
+    .disc {
+        width: 80%;
+    }
     /* Header */
     .header .container .header-content .links ul{
         position: absolute;
@@ -1138,20 +1161,14 @@ a {
         background-color: inherit;
         left: 10px;
     }
-    .side {
-        width: 100%;
-        justify-content: center;
-        z-index: -1;
-    }
+    /* Landing */
     .landing::before, .landing::after {
         display: none;
     }
     .landing .greeting {
         justify-content: center;
     }
-    .grid {
-        grid-template-columns: minmax(300px, 600px);
-    }
+    /* Services */
     .services .service .clon {
         flex-direction: column;
         align-items: flex-start;
@@ -1167,15 +1184,18 @@ a {
     .services .disc {
         width: 80%;
     }
+    /* Features */
     .features > img {
         display: none;
     }
+    /* Portfolio */
     .portfolio .art {
         grid-template-columns: minmax(270px, 1fr);
         grid-template-rows: minmax(150px, 1fr);
         row-gap: 5px;
         padding: 0 10px;
     }
+    /* About */
     .about .states > img {
         display: none;
     }
@@ -1203,9 +1223,7 @@ a {
         width: 80%;
         font-size: 32px;
     }
-    .disc {
-        width: 80%;
-    }
+    /* Pracing */
     .pracing .price {
         grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
         gap: 40px;
@@ -1221,6 +1239,7 @@ a {
         width: 500px;
         text-align: center;
     }
+    /* Contact */
     .contact .data {
         grid-template-columns: 90%;
         padding: 0 10px;
@@ -1234,12 +1253,18 @@ a {
 }
 /* Medium */
 @media (max-width: 992px) and (min-width: 786px) {
-    .header .container .header-content{
-        width: 700px;
-    }
+    /* Global Rules */
     .grid {
         grid-template-columns: minmax(300px, 600px);
     }
+    .disc {
+        width: 70%;
+    }
+    /* Header */
+    .header .container .header-content{
+        width: 700px;
+    }
+    /* Services */
     .services .service .clon {
         flex-direction: column;
         align-items: center;
@@ -1249,17 +1274,20 @@ a {
         flex-direction: column;
         align-items: center;
     }
+    /* Features */
     .features > img {
         transform: rotate(45deg);
         left: -10%;
         bottom: 10%;
     }
+    /* Portfolio */
     .portfolio .art {
         grid-template-columns: repeat(2, minmax(270px, 1fr));
         grid-template-rows: minmax(150px, 1fr);
         row-gap: 5px;
         padding: 0 10px;
     }
+    /* About */
     .about .states > img {
         display: none;
     }
@@ -1274,9 +1302,7 @@ a {
         padding: 20px;
         column-gap: 125px;
     }
-    .disc {
-        width: 70%;
-    }
+    /* Pracing */
     .pracing .price {
         grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
         gap: 40px;
@@ -1292,6 +1318,7 @@ a {
         width: 500px;
         text-align: center;
     }
+    /* Contact */
     .contact .data {
         grid-template-columns: 80% 20%;
         padding: 0 10%;
@@ -1299,20 +1326,24 @@ a {
 }
 /* Large */
 @media (max-width: 1200px) and (min-width: 992px) {
+    /* Header */
     .header .container .header-content {
         width: 900px;
     }
+    /* Portfolio */
     .portfolio .art {
         grid-template-columns: repeat(2, minmax(270px, 1fr));
         grid-template-rows: minmax(150px, 1fr);
         row-gap: 5px;
         padding: 0 10px;
     }
+    /* About */
     .about .skills {
         grid-template-columns: repeat(2, 400px);
         padding: 20px;
         column-gap: 125px;
     }
+    /* Contact */
     .contact .data {
         grid-template-columns: 80% 20%;
         padding: 0 15%;
@@ -1320,6 +1351,7 @@ a {
 }
 /* Larger */
 @media (min-width: 1200px) {
+    /* Header */
     .header .container .header-content {
         width: 1140px;
     }
